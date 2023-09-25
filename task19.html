@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+        
+    function reverseNumber(x) {
+
+        let sum = 0;
+        let n = 0;
+        if(x>0) {
+        while(x!=0) {
+            n = x%10;
+            sum = sum*10 + n;
+            x = Math.floor(x/10);
+            
+        }
+        return sum;
+       }
+    else {
+       console.log("Please enter a valid number");
+    }
+    }
+
+
+let x = prompt("Please enter a number");
+let reversed = reverseNumber(x);
+console.log(reversed); 
+
+</script>
+    
+</body>
+</html>

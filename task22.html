@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <button onclick = "date()">show date</button>
+    <div id="dateOutput"></div>
+    </div>
+
+    <br>
+
+    <div>
+        <button onclick = "time()">show time</button>
+        <div id="timeOutput"></div>
+    </div>
+
+<script>
+     function date() {
+      const currentDate = new Date();
+      let date=currentDate.getDate();
+      let month=currentDate.getMonth();
+      if(month== 0){ 
+        month = "January";
+     }else if(month== 1){ 
+        month  = "February";   
+     }else if(month == 2){ 
+        month  = "March"; 
+     }else if(month== 3){ 
+        month  = "April"; 
+     }
+     else if(month== 4){ 
+      month  = "May"; 
+   }else if(month== 5){ 
+        month  = "June"; 
+     }else if(month==6){ 
+        month  = "July";
+     }else if(month== 7){ 
+        month  = "August";
+     }else if(month== 8){ 
+        month  = "September"; 
+     }else if(month==9){ 
+        month  = "October"; 
+     }else if(month== 10){ 
+        month  = "November"; 
+     }else{ 
+        month  = "December"; 
+     }
+     let year=currentDate.getFullYear();
+     let res=date+"/"+month+"/"+year;
+    document.getElementById('dateOutput').innerText = res;
+    }
+
+    function time() {
+      const currentTime = new Date();
+      const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+      const formattedTime = currentTime.toLocaleDateString('en-US', options);
+      document.getElementById('timeOutput').innerText = `Time: ${formattedTime}`;
+    }
+</script>
+    
+</body>
+</html>

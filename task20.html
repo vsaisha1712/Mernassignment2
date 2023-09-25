@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+   function order_alpha(str) {
+
+    let arr = str.split('');
+
+    arr.sort();
+
+    let str1 = arr.join('');
+
+    return str1;
+
+
+
+   }
+
+    let str = prompt("Enter a string");
+    
+    let order = order_alpha(str);
+
+    console.log("Alphabetical order :" + order);
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>

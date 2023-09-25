@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Control</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.train-container {
+  margin-top: 50px;
+  
+}
+
+#train {
+  width: 200px;
+ transition: transform 1s linear;
+}
+
+.buttoncontainer {
+  margin-top: 20px;
+}
+.text{
+    color:blue;
+
+    font-size: larger;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="train-container">
+        <img src="https://img.freepik.com/premium-vector/toy-steam-train-with-passenger-car-flat-style-vector-illustration_710508-1717.jpg?w=2000" alt="Train" id="train">
+    </div>
+    <br>
+    <div class="text">Click the following buttons to handle animations</div>
+<div class="buttoncontainer">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        const train = document.getElementById('train');
+const startButton = document.getElementById('start');
+const stopButton = document.getElementById('stop');
+
+let isMoving = false;
+
+startButton.addEventListener('click', () => {
+    if (!isMoving) {
+        train.style.transform = 'translateX(570px)'; 
+        isMoving = true;
+    }
+});
+
+stopButton.addEventListener('click', () => {
+    if (isMoving) {
+        train.style.transform = 'translateX(20px)';
+        isMoving = false;
+    }
+});
+
+    </script>
+</body>
+</html>
